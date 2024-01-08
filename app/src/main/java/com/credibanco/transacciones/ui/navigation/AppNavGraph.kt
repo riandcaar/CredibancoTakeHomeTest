@@ -8,8 +8,12 @@ import androidx.navigation.compose.composable
 import com.credibanco.transacciones.ui.screens.auth.TransactionAuthScreen
 import com.credibanco.transacciones.ui.screens.auth.TransactionAuthViewModel
 import com.credibanco.transacciones.ui.screens.deletion.TransactionDeletion
+import com.credibanco.transacciones.ui.screens.deletion.TransactionDeletionViewModel
 import com.credibanco.transacciones.ui.screens.list.TransactionListScreen
+import com.credibanco.transacciones.ui.screens.list.TransactionListViewModel
 import com.credibanco.transacciones.ui.screens.search.TransactionSearchScreen
+import com.credibanco.transacciones.ui.screens.search.TransactionSearchViewModel
+import com.credibanco.transacciones.ui.screens.transactionInfo.TransactionInfoScreen
 
 @Composable
 fun AppNavGraph(navController: NavHostController) {
