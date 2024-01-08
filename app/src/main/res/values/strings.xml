@@ -1,3 +1,27 @@
 <resources>
     <string name="app_name">TakeHomeTest</string>
+    <string name="aprobada">00</string>
+    <string name="denegada">99</string>
+    <string name="id">ID</string>
+    <string name="commerce_code">Codigo Comercio</string>
+    <string name="terminal_code">Codigo Terminal</string>
+    <string name="amount">Valor Transacción</string>
+    <string name="card">Numero de tarjeta</string>
+    <string name="portal_transacciones">Portal de transacciones</string>
+    <string name="lista_transacciones">Lista de transacciones</string>
+    <string name="receipt">Recibo:</string>
+    <string name="annulment_code">Codigo de anulación:</string>
+    <string name="status">Estatus:</string>
+    <string name="transaction_id">ID Transacción:</string>
+    <string name="transaction_information">Información Transación</string>
+    <string name="annul_transaction">Anular Transacción</string>
+    <string name="no_transactions_vailable">No hay transacciones disponibles</string>
+    <string name="back">Back</string>
+    <string name="error">Error Message</string>
+    <string name="Search">Buscar</string>
+    <string name="receipt_id">Numero de recibo</string>
+    <string name="search_transaction">Buscar Transacción</string>
+    <string name="validar_transaccion">Validar transacción</string>
+    <string name="transaccion_exitosa">Transacción exitosa</string>
+    <string name="transaccion_denegada">Transacción denegada</string>
 </resources>

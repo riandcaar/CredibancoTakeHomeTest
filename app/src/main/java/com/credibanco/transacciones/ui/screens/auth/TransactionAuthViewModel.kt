@@ -26,11 +26,12 @@ class TransactionAuthViewModel @Inject constructor(
         viewModelScope.launch {
             _uiState.update { it.copy(loading = true) }
             try {
+                val formattedAmount = formatAmount(amountInput)
                 val randomId = (0..1000).random().toString()
                 val result = mainRepository.authorizeTransaction(
                     Transaction(
                         id = randomId,
-                        amount = amountInput,
+                        amount = formattedAmount,
                     )
                 )
                 if (result.isSuccess) {
@@ -45,7 +46,7 @@ class TransactionAuthViewModel @Inject constructor(
                         it.copy(
                             loading = false,
                             error = result.exceptionOrNull()?.message
-                                ?: "Algo pasó con la red pero no sabemos que",
+                                ?: "Error Message",
                         )
                     }
                 }
@@ -54,5 +55,12 @@ class TransactionAuthViewModel @Inject constructor(
                 _uiState.update { it.copy(error = e.message) }
             }
         }
+    }
+
+    private fun formatAmount(amountInput: String): String {
+        if (amountInput.length <= 2) return "0.$amountInput"
+        val decimalPart = amountInput.takeLast(2)
+        val integerPart = amountInput.dropLast(2)
+        return "$integerPart$decimalPart"
     }
 }

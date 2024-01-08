@@ -10,7 +10,6 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.credibanco.transacciones.ui.navigation.AppNavGraph
-import com.credibanco.transacciones.ui.screens.auth.TransactionAuthScreen
 import com.credibanco.transacciones.ui.theme.TakeHomeTestTheme
 import dagger.hilt.android.AndroidEntryPoint
 

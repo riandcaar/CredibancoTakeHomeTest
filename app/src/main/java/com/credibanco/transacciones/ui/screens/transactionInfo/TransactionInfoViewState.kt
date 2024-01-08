@@ -7,4 +7,5 @@ data class TransactionInfoViewState (
     val error: String? = null,
     val loading: Boolean = false,
     val annulmentSuccessful: Boolean = false
+
 )

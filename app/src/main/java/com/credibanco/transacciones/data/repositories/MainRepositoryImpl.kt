@@ -2,7 +2,6 @@ package com.credibanco.transacciones.data.repositories
 
 import android.os.Build
 import androidx.annotation.RequiresApi
-import com.credibanco.transacciones.data.local.CredibancoDatabase
 import com.credibanco.transacciones.data.local.dao.TransactionsDao
 import com.credibanco.transacciones.data.local.entities.TransactionEntity
 import com.credibanco.transacciones.data.network.TransactionsApi
@@ -10,7 +9,6 @@ import com.credibanco.transacciones.data.network.dtos.requests.TransactionAnnula
 import com.credibanco.transacciones.data.network.dtos.responses.TransactionAnnulationResponse
 import com.credibanco.transacciones.domain.MainRepositoryInterface
 import com.credibanco.transacciones.domain.mappers.toTransactionAuthRequest
-import com.credibanco.transacciones.domain.mappers.toTransactionEntity
 import com.credibanco.transacciones.domain.mappers.toTransactionResult
 import com.credibanco.transacciones.ui.models.Transaction
 import com.credibanco.transacciones.ui.models.TransactionResult
@@ -75,9 +73,9 @@ class MainRepositoryImpl @Inject constructor(
     ): Result<TransactionAnnulationResponse> {
         return withContext(Dispatchers.IO) {
             try {
-                val credentials = "$commerceCode$terminalCode"
                 val authHeader =
-                    "Basic ${Base64.getEncoder().encodeToString(credentials.toByteArray())}"
+                    "Basic ${"$commerceCode$terminalCode".encodeToBase64()}"
+
                 val response = transactionsApi.annulTransaction(
                     TransactionAnnulationRequest(
                         transactionId,

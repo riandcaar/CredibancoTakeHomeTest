@@ -41,18 +41,6 @@ class TransactionInfoViewModel @Inject constructor(
             }
         }
 
-
-        fun updateTransactionStatus(transactionId: String, newStatus: String) {
-            viewModelScope.launch {
-                val transaction =
-                    transactionsDao.getTransactionByReceipt(transactionId).firstOrNull()
-                transaction?.let {
-                    it.status = newStatus
-                    transactionsDao.saveTransaction(it)
-                }
-            }
-
-        }
-
     }
+
 }

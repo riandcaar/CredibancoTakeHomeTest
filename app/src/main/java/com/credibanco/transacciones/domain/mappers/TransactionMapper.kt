@@ -10,10 +10,6 @@ fun Transaction.toTransactionAuthRequest(): TransactionAuthRequest {
     return TransactionAuthRequest(id, commerceCode, terminalCode, amount, card)
 }
 
-fun Transaction.toTransactionEntity(): TransactionEntity {
-    return TransactionEntity(id, commerceCode, terminalCode, amount, card)
-}
-
 fun TransactionAuthResponse.toTransactionResult(): TransactionResult {
     return TransactionResult(
         receipt = receiptId,
