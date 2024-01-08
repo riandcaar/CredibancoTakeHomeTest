@@ -13,5 +13,9 @@ data class TransactionEntity(
     val commerceCode: String,
     val terminalCode: String,
     val amount: String,
-    val card: String
+    val card: String,
+    val receipt: String = "",
+    val annulmentCode: String = "",
+    var status: String = "",
+    var isAnnulmentButtonEnabled: Boolean = true
 )

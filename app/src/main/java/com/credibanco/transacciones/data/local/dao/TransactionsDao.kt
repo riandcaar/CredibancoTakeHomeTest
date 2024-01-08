@@ -6,6 +6,7 @@ import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import com.credibanco.transacciones.data.local.entities.TransactionEntity
+import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface TransactionsDao {
@@ -13,7 +14,7 @@ interface TransactionsDao {
     fun saveTransaction(transaction: TransactionEntity): Long
 
     @Query("SELECT * FROM transactions")
-    fun getTransactions(): List<TransactionEntity>
+    fun getTransactions(): Flow<List<TransactionEntity>>
 
     @Query("SELECT * FROM transactions WHERE receipt = :receipt")
     suspend fun getTransactionByReceipt(receipt: String): List<TransactionEntity>
