@@ -1,6 +1,5 @@
 package com.credibanco.transacciones.domain.mappers
 
-import com.credibanco.transacciones.data.local.entities.TransactionEntity
 import com.credibanco.transacciones.data.network.dtos.requests.TransactionAuthRequest
 import com.credibanco.transacciones.data.network.dtos.responses.TransactionAuthResponse
 import com.credibanco.transacciones.ui.models.Transaction

@@ -36,7 +36,6 @@ fun TransactionDeletion(
     navController: NavController
 ) {
 
-    val uiState by transactionDeletionViewModel.uiState.collectAsState()
 
     var receiptId by remember { mutableStateOf("") }
     var rrn by remember { mutableStateOf("") }

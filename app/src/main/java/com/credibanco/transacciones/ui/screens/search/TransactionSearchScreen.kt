@@ -47,7 +47,6 @@ fun TransactionSearchScreen(
     navController: NavController
 ) {
 
-    val uiState by transactionSearchViewModel.uiState.collectAsState()
 
     var receipt by remember { mutableStateOf("") }
 
