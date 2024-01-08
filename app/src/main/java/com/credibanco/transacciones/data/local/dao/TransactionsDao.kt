@@ -15,6 +15,10 @@ interface TransactionsDao {
     @Query("SELECT * FROM transactions")
     fun getTransactions(): List<TransactionEntity>
 
+    @Query("SELECT * FROM transactions WHERE receipt = :receipt")
+    suspend fun getTransactionByReceipt(receipt: String): List<TransactionEntity>
+
+
     @Delete()
     suspend fun deleteTransaction(items: List<TransactionEntity>)
 }
